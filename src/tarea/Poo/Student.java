@@ -58,8 +58,8 @@ public class Student {
 	    public String toString() {
 	    	return "Nombre Completo: "+ firstName+" "+ lastName+
 	    			" Registration: " + registration +
-	    			" Grado: " + grade +
-	    			"Año: " + year;
+	    			" Calificación: " + grade +
+	    			" Año: " + year;
 	    }
 	       
 

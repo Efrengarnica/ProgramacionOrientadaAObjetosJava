@@ -49,7 +49,7 @@ public class Courses {
 				   System.out.println(s);			   }
 		   }
 		   
-		   public double promedio() {
+		   public double promedio() {   
 			   double suma=0;
 			   double totalStudents=estudiantes.size();
 			   
@@ -59,9 +59,65 @@ public class Courses {
 			   return suma/totalStudents;
 		   }
 		   
-//		   public int alumnoTop() {
-//			   
-//		   }
+		   
+		   
+	   public void printRanking() {
+		   
+		   for (int i = 1; i < estudiantes.size(); i++) {
+			    Student current = estudiantes.get(i);
+			    int j = i - 1;
+			    while (j >= 0 && estudiantes.get(j).grade< current.grade) {
+			    	estudiantes.set(j + 1, estudiantes.get(j));
+			        j--;
+			    }
+			    estudiantes.set(j + 1, current);
+			}
+		   
+		   for(Student s: estudiantes) {
+			   System.out.println(s);
+		   }
+
+		   
+	   }
+			
+			   
+		   
+ public int bestGrade(ArrayList<Student> stu){
+			   
+			   int maximo = stu.get(0).grade;
+			   for(Student s: stu) {
+				   if(s.grade>maximo) {
+					   maximo=s.grade;
+				   }
+			   } 
+		       return maximo;
+		       
+		   }
+			   
+			   
+			   
+			   
+		   
+		   
+		   
+		   public void arribaPromedio(Student student) {
+			   
+			   if(student.grade>promedio()) {
+				   System.out.println("Su grade: "+ student.grade + " es arriba del promedio " + promedio());
+			   }else {
+				   System.out.println("Su grade: "+ student.grade + " esta debajo del promedio " + promedio());
+			   }
+			   
+//			   for(Student s: estudiantes ) {
+//				   if(s.grade>promedio()) {
+//				   System.out.println(s);
+//				   System.out.println("Arriba del promedio");
+//				   }else {
+//					   System.out.println(s);
+//					   System.out.println("Debajo del promedio");
+//				   }		
+//				   }
+		   }
 		   
 		   
 		   
@@ -69,6 +125,7 @@ public class Courses {
 		   
 		   
 		   
+}	   
 		   
 		   
 		   
@@ -76,6 +133,4 @@ public class Courses {
 		   
 		   
 		   
-		   
-		   
-}
+		

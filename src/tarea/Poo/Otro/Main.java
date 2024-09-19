@@ -51,8 +51,15 @@ public class Main {
 		System.out.println(mate.bestGrade());
 		System.out.println(mate.promedio());
 		
+		System.out.println("==========================");
+		System.out.println("==========================");
+		mate.arribaPromedio(efrenN);
+		mate.arribaPromedio(ferR);
 		
+		System.out.println("==========================");
+		System.out.println("==========================");
 		
+		mate.printRanking();
 		
 		
 		
